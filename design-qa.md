@@ -2,6 +2,14 @@
 
 final result: passed
 
+## Latest requested revision
+
+- The user clarified that the outer gray border belongs to the screenshot, not the application. Removed the outer border, rounded corners and top margin at every breakpoint.
+- Applied a uniform 80% interface scale at the document root, including icons, controls, popovers and teleported dialogs. Compensated viewport-relative app and dialog heights so the layout continues to fill the browser.
+- Desktop (1440 × 1000) and mobile (390 × 844) browser measurements confirm the app starts at (0, 0), fills the viewport, has zero border/radius and no horizontal document overflow. Desktop header renders at 70.4px (88px × 0.8).
+- Modal backdrops cover both full viewports and dialogs fit within them. Captures: `artifacts/scale-1440.png`, `artifacts/scale-1440-modal.png`, `artifacts/scale-390.png`, `artifacts/scale-390-modal.png`.
+- All 8 desktop/mobile interaction tests and the repository-prefixed production build passed after this change. The historical screenshot-frame observations below are superseded by this explicit user correction.
+
 ## Source and scope
 
 - Visual truth: three user-attached screenshots in this chat (tenant list, operations overview, tenant detail), replacing the inaccessible Stitch page as the target.

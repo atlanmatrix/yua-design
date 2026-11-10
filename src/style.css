@@ -1,7 +1,10 @@
 :root {
+  /* Scale the complete interface, including teleported dialogs and menus. */
+  --ui-scale: 0.8;
+  zoom: var(--ui-scale);
   font-family: Arial, "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
   color: #15283c;
-  background: #eef0f3;
+  background: var(--page);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -84,10 +87,8 @@ strong {
   font-weight: 650;
 }
 .app-frame {
-  margin: 8px 0 0;
-  border: 15px solid #9ea6b2;
-  border-radius: 60px;
-  height: calc(100dvh - 8px);
+  /* Keep the app viewport-sized after scaling; screenshot chrome is omitted. */
+  height: calc(100dvh / var(--ui-scale));
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -283,7 +284,7 @@ strong {
 .tenant-panel {
   border-radius: 66px 66px 36px 36px;
   padding: 54px 54px 0;
-  min-height: calc(100vh - 130px);
+  min-height: calc(100dvh / var(--ui-scale) - 130px);
 }
 .page-heading {
   display: flex;
@@ -1592,7 +1593,7 @@ strong {
   box-shadow: 0 20px 100px #101c3022;
   width: 620px;
   max-width: 100%;
-  max-height: calc(100dvh - 48px);
+  max-height: calc(100dvh / var(--ui-scale) - 48px);
   overflow-y: auto;
 }
 .modal-heading {
@@ -1976,10 +1977,6 @@ strong {
   }
 }
 @media (max-width: 1250px) {
-  .app-frame {
-    border-width: 10px;
-    border-radius: 42px;
-  }
   .app-header {
     padding: 0 24px;
     gap: 14px;
@@ -2189,12 +2186,6 @@ strong {
   }
 }
 @media (max-width: 900px) {
-  .app-frame {
-    border-width: 7px;
-    border-radius: 32px;
-    margin-top: 0;
-    min-height: 100vh;
-  }
   .app-header {
     height: auto;
     min-height: 112px;
@@ -2429,10 +2420,6 @@ strong {
   }
 }
 @media (max-width: 600px) {
-  .app-frame {
-    border-width: 5px;
-    border-radius: 25px;
-  }
   .app-header {
     padding: 15px 13px 10px;
     gap: 13px;
@@ -3159,7 +3146,7 @@ strong {
   .modal {
     padding: 23px;
     border-radius: 24px;
-    max-height: calc(100dvh - 30px);
+    max-height: calc(100dvh / var(--ui-scale) - 30px);
   }
   .modal-heading h2 {
     font-size: 21px;
