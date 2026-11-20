@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f7f8fd" />
-    <title>WANO · 租户管理</title>
+    <title>设计列表</title>
   </head>
   <body>
     <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      import { createApp } from "vue";
+      import CatalogList from "./src/components/CatalogList.vue";
+
+      createApp(CatalogList, {
+        title: "设计列表",
+        entries: [{ label: "WANO 核电评估平台", href: "./wano/", icon: "plant" }],
+      }).mount("#app");
+    </script>
   </body>
 </html>
