@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WANO 核电评估平台 · 版本列表</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module">
+      import { createApp } from "vue";
+      import CatalogList from "../src/components/CatalogList.vue";
+
+      createApp(CatalogList, {
+        title: "版本列表",
+        designName: "WANO 核电评估平台",
+        entries: [{ label: "v1", href: "./v1/", icon: "history" }],
+      }).mount("#app");
+    </script>
+  </body>
+</html>

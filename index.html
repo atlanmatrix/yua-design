@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="refresh" content="0; url=./wano/v1/" />
-    <title>WANO核电评估平台</title>
+    <title>设计列表</title>
   </head>
   <body>
-    <a href="./wano/v1/">进入 WANO 核电评估平台</a>
+    <div id="app"></div>
+    <script type="module">
+      import { createApp } from "vue";
+      import CatalogList from "./src/components/CatalogList.vue";
+
+      createApp(CatalogList, {
+        title: "设计列表",
+        entries: [{ label: "WANO 核电评估平台", href: "./wano/", icon: "plant" }],
+      }).mount("#app");
+    </script>
   </body>
 </html>
