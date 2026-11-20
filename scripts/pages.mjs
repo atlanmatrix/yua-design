@@ -1,13 +1,4 @@
-import { mkdir, copyFile, writeFile } from "node:fs/promises";
+import { cp, writeFile } from "node:fs/promises";
 
-// Physical entries allow GitHub Pages to serve a directly opened/refreshed route.
-for (const route of [
-  "wano/tenant/v1",
-  "wano/tenant/v1/overview",
-  "wano/tenant/v1/detail",
-]) {
-  await mkdir(`dist/${route}`, { recursive: true });
-  await copyFile("dist/index.html", `dist/${route}/index.html`);
-}
-await copyFile("dist/index.html", "dist/404.html");
+await cp("wano/v1", "dist/wano/v1", { recursive: true });
 await writeFile("dist/.nojekyll", "");

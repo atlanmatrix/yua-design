@@ -1,4 +1,4 @@
-name: Build and deploy Vue prototype to GitHub Pages
+name: Build and deploy WANO demo to GitHub Pages
 
 on:
   push:
